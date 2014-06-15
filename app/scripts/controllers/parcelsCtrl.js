@@ -2,6 +2,9 @@ angular.module("angularDemo").controller("parcelsCtrl", [
     "$scope",
     "parcels",
     function ($scope, parcels) {
-        $scope.parcels = parcels.all
+
+        "use strict";
+
+        $scope.parcels = parcels.all;
     }
 ]);

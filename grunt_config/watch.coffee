@@ -6,7 +6,7 @@ module.exports = (options, grunt) ->
 
   js:
     files: "#{paths.app}/scripts/**/*.js"
-    tasks: ["sync:dev_js", "htmlbuild:dev"]
+    tasks: ["jshint", "sync:dev_js", "htmlbuild:dev"]
   less:
     files: "#{paths.app}/styles/**/*.less"
     tasks: ["sync:dev_less", "less:dev", "htmlbuild:dev"]
@@ -32,5 +32,8 @@ module.exports = (options, grunt) ->
   bower:
     files: "bower.json"
     tasks: ["bower"]
+  jshint:
+    files: ".jshintrc"
+    tasks: ["jshint"]
   options:
     livereload: true

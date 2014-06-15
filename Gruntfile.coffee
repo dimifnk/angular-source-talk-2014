@@ -11,6 +11,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: options
     bower:        loadConfig "bower"
+    jshint:       loadConfig "jshint"
     htmlbuild:    loadConfig "htmlbuild"
     less:         loadConfig "less"
     karma:        loadConfig "karma"
@@ -26,7 +27,7 @@ module.exports = (grunt) ->
   grunt.registerTask "compile_dev",  ["sync_dev", "less:dev", "htmlbuild:dev"]
   grunt.registerTask "compile_dist", ["sync:dist", "ngtemplates", "uglify", "less:dist", "htmlbuild:dist"]
 
-  grunt.registerTask "dev",  ["deps", "compile_dev", "express:dev", "watch"]
-  grunt.registerTask "dist", ["deps", "compile_dist"]
-  grunt.registerTask "dist_server", ["deps", "compile_dist", "express:dist", "express-keepalive"]
+  grunt.registerTask "dev",  ["deps", "jshint", "compile_dev", "express:dev", "watch"]
+  grunt.registerTask "dist", ["deps", "jshint", "compile_dist"]
+  grunt.registerTask "dist_server", ["dist", "express:dist", "express-keepalive"]
   grunt.registerTask "ci",   ["dist", "karma:ci"]

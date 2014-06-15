@@ -2,6 +2,9 @@ angular.module("angularDemo", ["ngRoute", "ngResource"], [
     "$routeProvider",
     "$locationProvider",
     function($routeProvider, $locationProvider) {
+
+        "use strict";
+
         var ensureAllAddressesFetched = ["addresses", function (addresses) {
                 return addresses.all;
             }],
