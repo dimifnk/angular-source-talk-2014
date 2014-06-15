@@ -1,0 +1,20 @@
+{
+  "name": "AngularJS-Source-Talk-Demo",
+  "version": "0.0.1",
+  "homepage": "https://github.com/svi3c/angular-source-talk-2014",
+  "public": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    ".tmp",
+    "dist"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-route": "~1.2.16",
+    "bootstrap": "~3.1.1",
+    "underscore": "~1.6.0"
+  }
+}

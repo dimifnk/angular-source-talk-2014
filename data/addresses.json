@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "street": "Parcel Road",
+        "number": 42,
+        "zipcode": "12345",
+        "city": "Parcel City",
+        "country": "Parcelmania"
+    }
+]

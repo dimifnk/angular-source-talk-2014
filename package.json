@@ -1,0 +1,33 @@
+{
+  "name": "AngularJS-Source-Talk-Demo",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt-bower-task": "^0.3.4",
+    "grunt": "^0.4.5",
+    "grunt-npm-install": "^0.1.0",
+    "grunt-contrib-less": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "karma": "^0.12.16",
+    "grunt-karma": "^0.8.3",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-angular-templates": "^0.5.5",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-sync": "0.0.7",
+    "grunt-html-build": "^0.3.2",
+    "grunt-express": "^1.3.5",
+    "underscore": "^1.6.0",
+    "express": "^4.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/svi3c/angular-source-talk-2014.git"
+  },
+  "homepage": "https://github.com/svi3c/angular-source-talk-2014",
+  "paths": {
+    "app": "app",
+    "dev": ".tmp",
+    "dist": "dist",
+    "bower": ".tmp/lib",
+    "mocks": "data"
+  }
+}
