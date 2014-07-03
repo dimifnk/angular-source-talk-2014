@@ -13,6 +13,26 @@
     <!-- /build -->
 </head>
 <body ng-app="angularDemo">
-    <ng-view></ng-view>
+    <div class="container">
+        <div class="row">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active">
+                        <a ng-href="/addresses">Addressen verwalten</a>
+                    </li>
+                    <li>
+                        <a ng-href="/parcels">Sendungen verwalten</a>
+                    </li>
+                    <li>
+                        <a ng-href="/send-parcel">Sendung aufgeben</a>
+                    </li>
+                </ul>
+                <h3 class="text-muted">Flavia IT-Management</h3>
+            </div>
+        </div>
+        <ng-view></ng-view>
+        </div>
+    </div>
 </body>
 </html>
