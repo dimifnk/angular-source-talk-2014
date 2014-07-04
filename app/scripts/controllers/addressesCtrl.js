@@ -1,9 +1,9 @@
 "use strict";
-angular.module("angularDemo").controller("addressesCtrl", [
-    "$scope",
-    "addresses",
-    function ($scope, addresses) {
-
-
-    }
+angular.module("angularDemo")
+    .controller("addressesCtrl", [
+        "$scope",
+        "addresses",
+        function ($scope, addresses) {
+            $scope.addresses = addresses.all;
+        }
 ]);

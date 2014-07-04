@@ -11,8 +11,8 @@ task = process.argv[2]
 appRoutes = [
   "/"
   "/addresses"
-  "/parcels"
-  "/send-parcel"
+  "/addresses/add"
+  "/addresses/edit/:id"
 ]
 
 basePath = if task in ["dist_server"] then paths.dist else paths.dev

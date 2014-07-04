@@ -47,11 +47,8 @@ class Collection
 
 data =
   addresses: new Collection "#{__dirname}/../data/addresses.json"
-  parcels: new Collection "#{__dirname}/../data/parcels.json"
 
 # At the moment we keep everything in-memory
 data.addresses.load()
-data.parcels.load()
-data.parcels.embed data.addresses, "address"
 
 _.extend module.exports, data

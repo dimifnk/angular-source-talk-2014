@@ -1,0 +1,32 @@
+<article>
+    <input type="text">
+    <button>Search</button>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Group</th>
+                <th>addIcon / trashIcon</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="address in addresses">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>{{address.firstname}}</td>
+                <td>{{address.lastname}}</td>
+                <td>{{address.city}}</td>
+                <td>{{address.country}}</td>
+                <td>{{address.group}}</td>
+                <td>detailsIcon</td>
+            </tr>
+        </tbody>
+    </table>
+</article>
