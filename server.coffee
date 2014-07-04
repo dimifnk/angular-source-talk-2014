@@ -20,7 +20,8 @@ basePath = if task in ["dist_server"] then paths.dist else paths.dev
 app.use(bodyParser.json());
 
 appRoutes.forEach (route) ->
-  app.get route, (req, res) -> res.sendfile "#{basePath}/index.html"
+  app.get route, (req, res) ->
+    res.sendfile "#{basePath}/index.html"
 
 # provide static assets
 app.get "/assets/*", (req, res) -> res.sendfile "#{basePath}/#{req.params[0]}"

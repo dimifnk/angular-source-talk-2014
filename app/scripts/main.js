@@ -7,16 +7,10 @@ angular.module("angularDemo", ["ngRoute", "ngResource"], [
 
         var ensureAllAddressesFetched = ["addresses", function (addresses) {
                 return addresses.all;
-            }],
-            ensureAllParcelsFetched = ["parcels", function (parcels) {
-                return parcels.all;
-            }];
+        }];
 
         $locationProvider.html5Mode(true);
         $routeProvider
-            .when("/", {
-                templateUrl: "/assets/views/main.html"
-            })
             .when("/addresses", {
                 templateUrl: "/assets/views/addresses.html",
                 controller: "addressesCtrl",
@@ -24,22 +18,22 @@ angular.module("angularDemo", ["ngRoute", "ngResource"], [
                     whenAllAddressesFetched: ensureAllAddressesFetched
                 }
             })
-            .when("/parcels", {
-                templateUrl: "/assets/views/parcels.html",
-                controller: "parcelsCtrl",
+            .when("/edit", {
+                templateUrl: "/assets/views/edit.html",
+                controller: "editCtrl",
                 resolve: {
-                    whenAllParcelsFetched: ensureAllParcelsFetched
+                    whenAllAddressesFetched: ensureAllAddressesFetched
                 }
             })
-            .when("/send-parcel", {
-                templateUrl: "/assets/views/send-parcel.html",
-                controller: "sendParcelCtrl",
+            .when("/edit/:addressId", {
+                templateUrl: "/assets/views/edit.html",
+                controller: "editCtrl",
                 resolve: {
                     whenAllAddressesFetched: ensureAllAddressesFetched
                 }
             })
             .otherwise({
-                redirectTo: "/"
+                redirectTo: "/addresses"
             });
     }
 ]);

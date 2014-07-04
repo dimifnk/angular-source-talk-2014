@@ -1,9 +1,8 @@
 "use strict";
-angular.module("angularDemo").controller("addressesCtrl", [
+angular.module("angularDemo").controller("editCtrl", [
     "$scope",
     "addresses",
     function ($scope, addresses) {
-
 
     }
 ]);

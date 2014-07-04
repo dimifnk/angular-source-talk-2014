@@ -1,11 +1,112 @@
 [
     {
         "id": 1,
-        "name": "John Doe",
-        "street": "Parcel Road",
-        "number": 42,
-        "zipcode": "12345",
-        "city": "Parcel City",
-        "country": "Parcelmania"
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
+    },
+    {
+        "id": 1,
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Wilhelmshöher Allee",
+        "number": 268,
+        "zipcode": "34131",
+        "city": "Kassel",
+        "country": "Germany",
+        "group": "Flavia-IT"
     }
 ]

@@ -9,7 +9,6 @@ module.exports = (options) ->
     "#{bower}/angular/angular.js : #{bower}/angular/angular.min.js"
     "#{bower}/angular-resource/angular-resource.js : #{bower}/angular-resource/angular-resource.min.js"
     "#{bower}/angular-route/angular-route.js : #{bower}/angular-route/angular-route.min.js"
-
     "#{bower}/underscore/underscore.js : #{bower}/underscore/underscore.js"
   ]
 
