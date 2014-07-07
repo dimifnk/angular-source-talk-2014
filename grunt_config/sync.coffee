@@ -23,7 +23,7 @@ module.exports = (options, grunt) ->
   dev_static:
     files: [
         expand: true
-        src: ["**/*.{ico,png}", "fonts/**/*", "{templates,views}/**/*.html"]
+        src: ["**/*.{ico,png,jpg}", "fonts/**/*", "{templates,views}/**/*.html"]
         cwd: paths.app
         dest: paths.dev
     ].concat options.staticLibs.map (lib) -> _.extend {dest: paths.dev}, lib

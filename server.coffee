@@ -29,6 +29,7 @@ app.get "/assets/*", (req, res) -> res.sendfile "#{basePath}/#{req.params[0]}"
 # assets only for dev
 app.get "/styles/*", (req, res) -> res.sendfile "#{paths.dev}/styles/#{req.params[0]}"
 app.get "/lib/*", (req, res) -> res.sendfile "#{paths.bower}/#{req.params[0]}"
+app.get "/images/*", (req, res) -> res.sendfile "#{paths.dev}/images/#{req.params[0]}"
 
 dataCtrl app
 
