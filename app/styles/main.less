@@ -1,5 +1,4 @@
 @color-flavia-blue: #080f60;
-@color-flavia-orange: #ff9c00;
 @color-flavia-grey: #808080;
 @color-white: #ffffff;
 body{
@@ -14,11 +13,12 @@ table{
   text-align: left;
   border-collapse: collapse;
   th{
+    color: @color-white;
     font-size: 17px;
-    padding-left: 8px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 20px;
     border-bottom: 1px solid @color-flavia-blue;
-    background: rgba(255, 156, 0, 0.8);
+    background: @color-flavia-blue;
     height: 40px;
     &:last-child{
       text-align: right;
@@ -26,8 +26,8 @@ table{
   }
   td{
     font-size: 16px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 40px;
     &:last-child{
       width: 80px;
@@ -49,10 +49,6 @@ article{
 .flavia{
   color: @color-flavia-grey;
   float: right;
-}
-.seperate{
-  border-color: @color-flavia-orange;
-  clear: both;
 }
 .search-field{
   margin-bottom: 5px;
