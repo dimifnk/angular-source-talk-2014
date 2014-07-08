@@ -1,6 +1,7 @@
-@color-flavia-blue: blue;
-@color-vlavia-orange: orange;
-@color-flavia-grey: grey;
+@color-flavia-blue: #080f60;
+@color-flavia-orange: #ff9c00;
+@color-flavia-grey: #808080;
+@color-white: #ffffff;
 body{
   max-width: 1000px;
   margin: 0 auto;
@@ -17,20 +18,27 @@ table{
     padding-left: 8px;
     padding-right: 10px;
     border-bottom: 1px solid @color-flavia-blue;
-    background: rgba(255, 165, 0, 0.4);
+    background: rgba(255, 156, 0, 0.8);
     height: 40px;
+    &:last-child{
+      text-align: right;
+    }
   }
   td{
     font-size: 16px;
     padding-left: 10px;
     padding-right: 10px;
     height: 40px;
+    &:last-child{
+      width: 80px;
+      text-align: right;
+    }
   }
 }
 article{
   clear: both;
   position: relative;
-  top: -42px;
+  top: -46px;
 }
 .logo{
   width: 70px;
@@ -43,7 +51,7 @@ article{
   float: right;
 }
 .seperate{
-  border-color: @color-vlavia-orange;
+  border-color: @color-flavia-orange;
   clear: both;
 }
 .search-field{
@@ -58,10 +66,14 @@ article{
   height: 35px;
   width: 35px;
 }
+.button-icon{
+  height: 35px;
+  width: 35px;
+}
 .even{
-  background: rgba(0, 0, 255, 0.4);
+  background: rgba(8, 15, 96, 0.7);
 }
 .odd{
-  background-color: #ffffff;
+  background-color: @color-white;
 }
 
