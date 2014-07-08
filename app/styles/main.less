@@ -8,10 +8,45 @@ body{
 header{
   width: 100%;
 }
+input{
+  &[type="text"]{
+    margin-bottom: 5px;
+    width: 250px;
+    height: 25px;
+    padding-left: 5px;
+  }
+  &.form{
+    margin-bottom: 10px;
+    float: left;
+    margin-bottom: 10px;
+  }
+}
+label{
+  color: @color-flavia-grey;
+  font-size: 17px;
+  padding-right: 5px;
+  width: 75px;
+  float: left;
+  clear: both;
+  padding-top: 5px;
+}
 table{
+  border-radius: 10px;
   border: 1px solid @color-flavia-blue;
   text-align: left;
-  border-collapse: collapse;
+  border-spacing: 0px;
+  tr{
+    &:last-child{
+      td{
+        &:first-child{
+          border-bottom-left-radius: 9px;
+        }
+        &:last-child{
+          border-bottom-right-radius: 9px;
+        }
+      }
+    }
+  }
   th{
     color: @color-white;
     font-size: 17px;
@@ -20,8 +55,12 @@ table{
     border-bottom: 1px solid @color-flavia-blue;
     background: @color-flavia-blue;
     height: 40px;
+    &:first-child{
+      border-top-left-radius: 9px;
+    }
     &:last-child{
       text-align: right;
+      border-top-right-radius: 9px;
     }
   }
   td{
@@ -38,33 +77,65 @@ table{
 article{
   clear: both;
   position: relative;
-  top: -46px;
+  &.addresses{
+    top: -46px;
+  }
+  &.add{
+    top: -2px;
+  }
 }
-.logo{
-  width: 70px;
-  float: right;
-  padding-left: 10px;
-  padding-top: 5px;
+fieldset{
+  border: 1px solid @color-flavia-blue;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 2px @color-flavia-blue;
+  padding-top: 25px;
+  padding-left: 35px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  width: 44%;
+  height: 200px;
+  display: inline-block;
+  &:first-child{
+    margin-right: 15px;
+  }
+  &:last-child{
+    border: none;
+    box-shadow: none;
+    padding: 0px;
+    display: block;
+  }
+}
+legend{
+  color: @color-flavia-blue;
+  font-size: 24px;
+  font-weight: bold;
+  background: @color-white;
+}
+img{
+  &.search-icon{
+    position: relative;
+    top: 12px;
+    height: 35px;
+    width: 35px;
+  }
+  &.button-icon{
+    height: 35px;
+    width: 35px;
+    &.form{
+      padding-right: 10px;
+    }
+  }
+  &.logo{
+    width: 70px;
+    float: right;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
 }
 .flavia{
   color: @color-flavia-grey;
   float: right;
-}
-.search-field{
-  margin-bottom: 5px;
-  width: 250px;
-  height: 25px;
-  padding-left: 5px;
-}
-.search-icon{
-  position: relative;
-  top: 12px;
-  height: 35px;
-  width: 35px;
-}
-.button-icon{
-  height: 35px;
-  width: 35px;
 }
 .even{
   background: rgba(8, 15, 96, 0.7);
