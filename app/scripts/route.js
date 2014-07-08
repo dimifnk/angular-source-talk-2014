@@ -6,20 +6,20 @@ angular.module("angularDemo")
         function($routeProvider, $locationProvider) {
             $locationProvider.html5Mode(true);
             $routeProvider
-                .when("/addresses", {
+                .when("/", {
                     templateUrl: "/assets/views/addresses.html",
                     controller: "addressesCtrl"
                 })
-                .when("/addresses/add", {
+                .when("/add", {
                     templateUrl: "/assets/views/edit.html",
                     controller: "editCtrl"
                 })
-                .when("/addresses/edit/:id", {
+                .when("/edit/:id", {
                     templateUrl: "/assets/views/edit.html",
                     controller: "editCtrl"
                 })
                 .otherwise({
-                    redirectTo: "/addresses"
+                    redirectTo: "/"
                 });
         }
     ]
