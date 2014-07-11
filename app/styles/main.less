@@ -1,6 +1,20 @@
 @color-flavia-blue: #080f60;
 @color-flavia-grey: #808080;
+@color-valid: #008000;
+@color-invalid: #FF0000;
 @color-white: #ffffff;
+
+form{
+  input{
+   &.ng-valid.ng-dirty{
+   }
+   &.ng-invalid.ng-dirty{
+      border: 1px solid @color-invalid;
+      box-shadow: 0px 0px 2px 1px @color-invalid;
+   }
+  }
+}
+
 body{
   max-width: 1000px;
   margin: 0 auto;
@@ -9,7 +23,7 @@ header{
   width: 100%;
 }
 input{
-  &[type="text"]{
+  &[type="text"], &[type="email"]{
     margin-bottom: 5px;
     width: 250px;
     height: 25px;
