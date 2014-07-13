@@ -3,8 +3,7 @@ angular.module("angularDemo")
     .config([
         "$routeProvider",
         "$locationProvider",
-        function($routeProvider, $locationProvider) {
-            $locationProvider.html5Mode(true);
+        function($routeProvider) {
             $routeProvider
                 .when("/", {
                     templateUrl: "/assets/views/addresses.html",
