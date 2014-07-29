@@ -1,5 +1,5 @@
 <article class="addresses">
-    <input type="text" placeholder="Search">
+    <input type="text" placeholder="Search" ng-model="searchFilter">
     <img src="images/Magnifier.png" class="search-icon">
     <table>
         <thead>
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="address in addresses" ng-class-even="'even'" ng-class-odd="'odd'">
+            <tr ng-repeat="address in addresses | filter:searchFilter" ng-class-even="'even'" ng-class-odd="'odd'">
                 <td>
                     <input type="checkbox">
                 </td>
