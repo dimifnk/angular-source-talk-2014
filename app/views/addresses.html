@@ -4,7 +4,7 @@
         <thead>
             <tr>
                 <th>
-                    <input type="checkbox">
+                    <input type="checkbox" ng-model="selectAll">
                 </th>
                 <th>Firstname</th>
                 <th>Lastname</th>
@@ -20,7 +20,7 @@
         <tbody>
             <tr ng-repeat="address in addresses | filter:searchFilter" ng-class-even="'even'" ng-class-odd="'odd'">
                 <td>
-                    <input type="checkbox">
+                    <input type="checkbox" ng-checked="selectAll">
                 </td>
                 <td>{{address.firstname}}</td>
                 <td>{{address.lastname}}</td>

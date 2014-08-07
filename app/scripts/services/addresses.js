@@ -1,11 +1,9 @@
 "use strict";
 angular.module("angularDemo")
-    .factory("addresses", [
+    .factory("Addresses", [
         "$resource",
         function($resource) {
-            var service = $resource("/data/addresses");
-            service.all = service.query();
-            return service;
+            return $resource("/data/addresses/:id");
         }
     ]
 );

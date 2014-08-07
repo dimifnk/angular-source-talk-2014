@@ -2,8 +2,7 @@
 angular.module("angularDemo")
     .config([
         "$routeProvider",
-        "$locationProvider",
-        function($routeProvider) {
+        function($routeProvider, Addresses) {
             $routeProvider
                 .when("/", {
                     templateUrl: "/assets/views/addresses.html",
@@ -11,11 +10,21 @@ angular.module("angularDemo")
                 })
                 .when("/add", {
                     templateUrl: "/assets/views/edit.html",
-                    controller: "editCtrl"
+                    controller: "editCtrl",
+                    resolve: {
+                        address: function($route, Addresses) {
+                            return new Addresses();
+                        }
+                    }
                 })
                 .when("/edit/:id", {
                     templateUrl: "/assets/views/edit.html",
-                    controller: "editCtrl"
+                    controller: "editCtrl",
+                    resolve: {
+                        address: function($route, Addresses) {
+                            return Addresses.get({id: $route.current.params.id});
+                        }
+                    }
                 })
                 .otherwise({
                     redirectTo: "/"
