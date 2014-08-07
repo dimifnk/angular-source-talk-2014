@@ -1,5 +1,5 @@
 <article class="add">
-    <form>
+    <form name="addressForm">
         <fieldset>
             <legend>Person</legend>
             <label for="firstname">Firstname:</label>
@@ -23,9 +23,9 @@
             <input id="country" type="text" ng-model="address.country" class="form" required>
         </fieldset>
         <fieldset>
-            <img src="images/Save.png" class="button-icon form">
-            <img src="images/Cancel.png" class="button-icon form">
-            <img src="images/Trash.png" class="button-icon form">
+            <a ng-href="#/"><img src="images/Cancel.png" class="button-icon form"></a>
+            <a href ng-click="delete()"><img src="images/Trash.png" class="button-icon form"></a>
+            <a href ng-click="save()"><img src="images/Save.png" ng-hide="addressForm.$invalid" class="button-icon form"></a>
         </fieldset>
     </form>
 </article>
