@@ -5,5 +5,15 @@ angular.module("angularDemo")
         "Addresses",
         function ($scope, Addresses) {
             $scope.addresses = Addresses.query();
+
+            $scope.selected = [];
+
+            $scope.deleteSelected = function(){
+                $scope.selected.forEach(function(address){
+                    if(address){
+                        Addresses.delete({}, {id:address});
+                    }
+                });
+            };
         }
 ]);
