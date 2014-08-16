@@ -16,21 +16,21 @@ appRoutes = [
   "/edit/:id"
 ]
 
-basePath = if task in ["dist_server"] then paths.dist else paths.dev
+basePath = if task in ["dist_server"] then "#{__dirname}/#{paths.dist}" else "#{__dirname}/#{paths.dev}"
 
 app.use(bodyParser.json());
 
 appRoutes.forEach (route) ->
   app.get route, (req, res) ->
-    res.sendfile "#{basePath}/index.html"
+    res.sendFile "#{basePath}/index.html"
 
 # provide static assets
-app.get "/assets/*", (req, res) -> res.sendfile "#{basePath}/#{req.params[0]}"
+app.get "/assets/*", (req, res) -> res.sendFile "#{basePath}/#{req.params[0]}"
 
 # assets only for dev
-app.get "/styles/*", (req, res) -> res.sendfile "#{paths.dev}/styles/#{req.params[0]}"
-app.get "/lib/*", (req, res) -> res.sendfile "#{paths.bower}/#{req.params[0]}"
-app.get "/images/*", (req, res) -> res.sendfile "#{paths.dev}/images/#{req.params[0]}"
+app.get "/styles/*", (req, res) -> res.sendFile "#{__dirname}/#{paths.dev}/styles/#{req.params[0]}"
+app.get "/lib/*", (req, res) -> res.sendFile "#{__dirname}/#{paths.bower}/#{req.params[0]}"
+app.get "/images/*", (req, res) -> res.sendFile "#{__dirname}/#{paths.dev}/images/#{req.params[0]}"
 
 dataCtrl app
 
