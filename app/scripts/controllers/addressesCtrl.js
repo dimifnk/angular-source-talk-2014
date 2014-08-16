@@ -1,19 +1,25 @@
-"use strict";
-angular.module("angularDemo")
-    .controller("addressesCtrl", [
-        "$scope",
-        "Addresses",
-        function ($scope, Addresses) {
-            $scope.addresses = Addresses.query();
+angular.module("angularDemo").controller("addressesCtrl", function ($scope, Addresses, $q) {
 
-            $scope.selected = [];
+    "use strict";
 
-            $scope.deleteSelected = function(){
-                $scope.selected.forEach(function(address){
-                    if(address){
-                        Addresses.delete({}, {id:address});
-                    }
-                });
-            };
+    var addresses = $scope.addresses = Addresses.query();
+
+    $scope.columns = ["firstname", "lastname", "city", "country", "group"];
+
+    $scope.deleteSelected = function () {
+        var selected = _.where(addresses, {selected: true});
+        $q.all(selected.map(function(address) {
+            return address.$delete().$promise;
+        })).then(function() {
+            var addresses = $scope.addresses = Addresses.query();
+        });
+    };
+
+    $scope.reorder = function(order) {
+        if($scope.order !== order) {
+            $scope.reverseOrder = true;
         }
-]);
+        $scope.order = order;
+        $scope.reverseOrder = !$scope.reverseOrder;
+    };
+});
