@@ -4,7 +4,7 @@
         <thead>
             <tr>
                 <th>
-                    <input type="checkbox" ng-model="selectAll">
+                    <input type="checkbox" ng-model="allSelected" ng-click="selectAll()">
                 </th>
                 <th ng-repeat="col in columns" ng-click="reorder(col)" ng-class="{ordered: order === col, reversed: reverseOrder}">{{col | capitalize}}</th>
                 <th>
@@ -16,7 +16,7 @@
         <tbody>
             <tr ng-repeat="address in addresses | filter:searchFilter | orderBy:order:reverseOrder track by address.id" ng-class-even="'even'" ng-class-odd="'odd'">
                 <td>
-                    <input type="checkbox" ng-model="address.selected">
+                    <input type="checkbox" ng-model="address.selected" ng-click="updateAllSelected()">
                 </td>
                 <td ng-repeat="col in columns">{{address[col]}}</td>
                 <td>
