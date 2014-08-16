@@ -66,14 +66,32 @@ table{
     color: @color-white;
     font-size: 17px;
     padding-left: 18px;
-    padding-right: 20px;
+    padding-right: 10px;
     border-bottom: 1px solid @color-flavia-blue;
     background: @color-flavia-blue;
     height: 40px;
+    cursor: pointer;
+    &.ordered{
+      background: fade(@color-flavia-blue, 70%);
+      &:after{
+        content: "";
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid white;
+        float: right;
+        margin-top: 5px;
+      }
+      &.reversed:after{
+        border-bottom: none;
+        border-top: 10px solid white;
+      }
+    }
     &:first-child{
+      cursor: default;
       border-top-left-radius: 9px;
     }
     &:last-child{
+      cursor: default;
       text-align: right;
       border-top-right-radius: 9px;
     }
