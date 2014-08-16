@@ -2,16 +2,21 @@
 angular.module("angularDemo").controller("editCtrl", [
     "$scope",
     "address",
-    function ($scope, address) {
+    "$location",
+    function ($scope, address, $location) {
         $scope.address = address;
 
-        $scope.save = function(){
-            $scope.address.$save();
+        $scope.save = function () {
+            $scope.address.$save().then(goToRoot);
         };
 
-        $scope.delete = function(){
-            $scope.address.$delete();
+        $scope.delete = function () {
+            $scope.address.$delete().then(goToRoot);
         };
+
+        function goToRoot() {
+            $location.path("/");
+        }
 
     }
 ]);

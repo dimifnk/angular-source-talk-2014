@@ -15,12 +15,12 @@ module.exports = (app) ->
       log.debug "GET    #{collectionName} called. params: #{json req.params}"
       res.send if req.params.id? then collection[req.params.id - 1] else _.compact collection
     app.post "/#{collectionName}", (req, res) ->
-      log.debug "POST   #{collectionName} called. data: #{json req.data}"
+      log.debug "POST   #{collectionName} called. data: #{json req.body}"
       req.body.id = collection.length + 1
       collection.push req.body
       res.send req.body
     app.put "/#{collectionName}/:id", (req, res) ->
-      log.debug "PUT    #{collectionName} called. params: #{json req.params}, data: #{json req.data}"
+      log.debug "PUT    #{collectionName} called. params: #{json req.params}, data: #{json req.body}"
       collection[req.params.id - 1] = req.body
       res.send req.body
     app.delete "/#{collectionName}/:id", (req, res) ->

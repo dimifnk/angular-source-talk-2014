@@ -27,7 +27,7 @@ module.exports = (grunt) ->
   grunt.registerTask "compile_dev",  ["sync_dev", "less:dev", "htmlbuild:dev"]
   grunt.registerTask "compile_dist", ["sync:dist", "ngtemplates", "uglify", "less:dist", "htmlbuild:dist"]
 
-  grunt.registerTask "dev",  ["deps", "jshint", "compile_dev", "express:dev", "watch"]
-  grunt.registerTask "dist", ["deps", "jshint", "compile_dist"]
+  grunt.registerTask "dev",  ["deps", "jshint", "karma:dev", "compile_dev", "express:dev", "watch"]
+  grunt.registerTask "dist", ["deps", "jshint", "karma:dist", "compile_dist"]
   grunt.registerTask "dist_server", ["dist", "express:dist", "express-keepalive"]
-  grunt.registerTask "ci",   ["dist", "karma:ci"]
+  grunt.registerTask "ci",   ["dist"]

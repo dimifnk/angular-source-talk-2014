@@ -6,7 +6,10 @@ module.exports = (options, grunt) ->
 
   js:
     files: "#{paths.app}/scripts/**/*.js"
-    tasks: ["jshint", "sync:dev_js", "htmlbuild:dev"]
+    tasks: ["karma:dev", "jshint", "sync:dev_js", "htmlbuild:dev"]
+  tests:
+    files: "tests/**/*.coffee"
+    tasks: ["karma:dev"]
   less:
     files: "#{paths.app}/styles/**/*.less"
     tasks: ["sync:dev_less", "less:dev", "htmlbuild:dev"]
