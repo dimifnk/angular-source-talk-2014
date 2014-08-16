@@ -8,6 +8,7 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
+            '.tmp/lib/underscore/underscore.js',
             '.tmp/lib/angular/angular.js',
             '.tmp/lib/angular-resource/angular-resource.js',
             '.tmp/lib/angular-mocks/angular-mocks.js',

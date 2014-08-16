@@ -20,7 +20,7 @@ describe "resource", ->
     beforeEach ->
       $httpBackend.when('POST', '/data/test').respond {x: "y", id: 1}
       $httpBackend.when('PUT', '/data/test/1').respond {x: "y", id: 1}
-      testResource = resource "/data/test/:id", {id: "@id"}
+      testResource = resource "/data/test/:id", {id: "@id"}, ["id", "x"]
       resInst = new testResource {x: "y"}
 
     it "should use the POST method if no id is set", ->
@@ -37,3 +37,12 @@ describe "resource", ->
       resInst.$save()
 
       $httpBackend.flush()
+
+    it "should send a clean copy of the instance to the server", ->
+      $httpBackend.expectPOST '/data/test', {x: "y"}
+      resInst.y = "z"
+
+      resInst.$save()
+
+      $httpBackend.flush()
+      expect(resInst.y).toBe "z"

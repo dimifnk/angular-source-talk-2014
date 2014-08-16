@@ -3,7 +3,8 @@
     "boss": true,
     "undef": true,
     "predef": [
-        "angular"
+        "angular",
+        "_"
     ],
     "globalstrict": true,
     "strict": true
