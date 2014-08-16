@@ -1,6 +1,8 @@
 app = require("express")()
 bodyParser = require "body-parser"
 pkg = require "./package.json"
+require("./server/logger") "debug"
+log = require("./server/logger") "server"
 
 dataCtrl = require "./server/dataCtrl"
 
@@ -31,5 +33,7 @@ app.get "/lib/*", (req, res) -> res.sendfile "#{paths.bower}/#{req.params[0]}"
 app.get "/images/*", (req, res) -> res.sendfile "#{paths.dev}/images/#{req.params[0]}"
 
 dataCtrl app
+
+log.info "Setup complete"
 
 module.exports = app
