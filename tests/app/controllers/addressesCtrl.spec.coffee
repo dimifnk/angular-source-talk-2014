@@ -3,7 +3,6 @@ describe "addressesCtrl", ->
   addressesCtrl = null
   $timeout = null
   $scope = null
-  Addresses = null
   addresses = null
 
   beforeEach module "angularDemo"
@@ -12,9 +11,7 @@ describe "addressesCtrl", ->
     $timeout = _$timeout_
     addresses = [{}, {}, {}]
     $scope = {}
-    Addresses =
-      query: jasmine.createSpy("query").and.returnValue addresses
-    addressesCtrl = $controller "addressesCtrl", {$scope: $scope, Addresses: Addresses}
+    addressesCtrl = $controller "addressesCtrl", {$scope: $scope, addresses: addresses}
 
   afterEach ->
     $timeout.verifyNoPendingTasks()
@@ -22,7 +19,6 @@ describe "addressesCtrl", ->
   describe "initialization", ->
 
     it "should query all Addresses and they should be put on the scope", ->
-      expect(Addresses.query).toHaveBeenCalled()
       expect($scope.addresses).toBe addresses
 
   describe "$scope.deleteSelected()", ->

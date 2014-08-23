@@ -54,7 +54,8 @@ describe "resource", ->
 
       $httpBackend.flush()
 
-
+    it "should send only fields listed in the schema of the resource", ->
+      # TODO: implement
 
   describe "delete(address)", ->
 

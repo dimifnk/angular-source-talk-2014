@@ -1,8 +1,8 @@
-angular.module("angularDemo").controller("addressesCtrl", function ($scope, Addresses, $q, $timeout) {
+angular.module("angularDemo").controller("addressesCtrl", function ($scope, addresses, Addresses, $q, $timeout) {
 
     "use strict";
 
-    var addresses = $scope.addresses = Addresses.query();
+    $scope.addresses = addresses;
 
     $scope.columns = ["firstname", "lastname", "city", "country", "group"];
 
@@ -11,7 +11,9 @@ angular.module("angularDemo").controller("addressesCtrl", function ($scope, Addr
         $q.all(selected.map(function(address) {
             return address.$delete().$promise;
         })).then(function() {
-            var addresses = $scope.addresses = Addresses.query();
+            Addresses.query().$promise.then(function(addrs) {
+                addresses = $scope.addresses = addrs;
+            });
         });
     };
 
