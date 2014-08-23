@@ -27,6 +27,9 @@ describe "addressesCtrl", ->
   describe "$scope.reorder()", ->
     # TODO: Implement
 
+  describe "$scope.reload()", ->
+    # TODO: Implement
+
   describe "$scope.selectAll()", ->
 
     it "should add selection to all addresses, if $scope.allSelected is false", ->

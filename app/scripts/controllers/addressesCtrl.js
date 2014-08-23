@@ -10,10 +10,13 @@ angular.module("angularDemo").controller("addressesCtrl", function ($scope, addr
         var selected = _.where(addresses, {selected: true});
         $q.all(selected.map(function(address) {
             return address.$delete().$promise;
-        })).then(function() {
-            Addresses.query().$promise.then(function(addrs) {
-                addresses = $scope.addresses = addrs;
-            });
+        })).then($scope.reload);
+    };
+
+    $scope.reload = function () {
+        // addresses = $scope.addresses = Addresses.query();
+        Addresses.query().$promise.then(function (addrs) {
+            addresses = $scope.addresses = addrs;
         });
     };
 
