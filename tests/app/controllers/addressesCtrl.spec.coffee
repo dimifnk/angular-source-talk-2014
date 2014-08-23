@@ -1,4 +1,4 @@
-describe "resource", ->
+describe "addressesCtrl", ->
 
   addressesCtrl = null
   $timeout = null
@@ -24,6 +24,12 @@ describe "resource", ->
     it "should query all Addresses and they should be put on the scope", ->
       expect(Addresses.query).toHaveBeenCalled()
       expect($scope.addresses).toBe addresses
+
+  describe "$scope.deleteSelected()", ->
+    # TODO: Implement
+
+  describe "$scope.reorder()", ->
+    # TODO: Implement
 
   describe "$scope.selectAll()", ->
 
