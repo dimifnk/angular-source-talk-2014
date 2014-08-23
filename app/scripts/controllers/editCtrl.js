@@ -1,22 +1,19 @@
-"use strict";
-angular.module("angularDemo").controller("editCtrl", [
-    "$scope",
-    "address",
-    "$location",
-    function ($scope, address, $location) {
-        $scope.address = address;
+angular.module("angularDemo").controller("editCtrl", function ($scope, address, $location) {
 
-        $scope.save = function () {
-            $scope.address.$save().$promise.then(goToRoot);
-        };
+    "use strict";
 
-        $scope.delete = function () {
-            $scope.address.$delete().$promise.then(goToRoot);
-        };
+    $scope.address = address;
 
-        function goToRoot() {
-            $location.path("/");
-        }
+    $scope.save = function () {
+        $scope.address.$save().$promise.then(goToRoot);
+    };
 
+    $scope.delete = function () {
+        $scope.address.$delete().$promise.then(goToRoot);
+    };
+
+    function goToRoot() {
+        $location.path("/");
     }
-]);
+
+});
