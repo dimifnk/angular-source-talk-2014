@@ -12,6 +12,7 @@ module.exports = function (config) {
             '.tmp/lib/angular/angular.js',
             '.tmp/lib/angular-resource/angular-resource.js',
             '.tmp/lib/angular-mocks/angular-mocks.js',
+            '.tmp/lib/angular-route/angular-route.js',
             'app/scripts/main.js',
             'app/scripts/**/*.js',
             'tests/app/mocks/**/*.coffee',
@@ -19,7 +20,7 @@ module.exports = function (config) {
         ],
 
         // list of files to exclude
-        exclude: ['app/scripts/route.js'],
+        //exclude: ['app/scripts/route.js'],
 
         // use dots reporter, as travis terminal does not support escaping sequences
         // possible values: 'dots', 'progress'
