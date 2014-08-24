@@ -6,8 +6,8 @@ module.exports = (options, grunt) ->
 
   files = {}
   files["#{paths.dist}/scripts/main.min.js"] = options.jsLibsMin.concat [
-    "#{paths.app}/scripts/main.js"
-    "#{paths.app}/scripts/**/*.js"
+    ".tmp/annotated/scripts/main.js"
+    ".tmp/annotated/scripts/**/*.js"
     "#{paths.dev}/scripts/templates.js"
   ]
 

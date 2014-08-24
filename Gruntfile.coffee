@@ -17,6 +17,7 @@ module.exports = (grunt) ->
     karma:        loadConfig "karma"
     uglify:       loadConfig "uglify"
     ngtemplates:  loadConfig "ngtemplates"
+    ngAnnotate:   loadConfig "annotate"
     watch:        loadConfig "watch"
     sync:         loadConfig "sync"
     express:      loadConfig "express"
@@ -25,7 +26,7 @@ module.exports = (grunt) ->
   grunt.registerTask "deps",         ["npm-install", "bower"]
   grunt.registerTask "sync_dev",     ["sync:dev_js", "sync:dev_less", "sync:dev_static", "htmlbuild:dev"]
   grunt.registerTask "compile_dev",  ["sync_dev", "less:dev", "htmlbuild:dev"]
-  grunt.registerTask "compile_dist", ["sync:dist", "ngtemplates", "uglify", "less:dist", "htmlbuild:dist"]
+  grunt.registerTask "compile_dist", ["sync:dist", "ngtemplates", "ngAnnotate", "uglify", "less:dist", "htmlbuild:dist"]
 
   grunt.registerTask "dev",  ["deps", "jshint", "karma:dev", "compile_dev", "express:dev", "watch"]
   grunt.registerTask "dist", ["deps", "jshint", "karma:dist", "compile_dist"]
