@@ -15,7 +15,7 @@ angular.module("angularDemo").controller("addressesCtrl", function ($scope, addr
 
     $scope.reload = function () {
         // addresses = $scope.addresses = Addresses.query();
-        Addresses.query().$promise.then(function (addrs) {
+        Addresses.query(function (addrs) {
             addresses = $scope.addresses = addrs;
         });
     };

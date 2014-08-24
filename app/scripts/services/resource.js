@@ -16,17 +16,32 @@ angular.module("angularDemo").factory("resource", function ($resource) {
         methods.update = {method: "PUT"};
         methods.create = {method: "POST"};
         var Resource = $resource(path, defaults, methods);
+
         Resource.save = function(res) {
             new Resource(res).$save();
         };
-        Resource.prototype.$save = function () {
+
+        Resource.prototype.$save = function (params, success, error) {
             var clean = _.pick(this, schema);
+
+            handleOptionalParams();
             if ("id" in this) {
-                return Resource.update(clean);
+                return Resource.update(params, clean, success || params, error || success);
             }
             else {
-                return Resource.create(clean);
+                return Resource.create(params, clean, success || params, error || success);
             }
+
+            function handleOptionalParams() {
+                if (_.isFunction(params)) {
+                    if (_.isFunction(success)) {
+                        error = success;
+                    }
+                    success = params;
+                    params = null;
+                }
+            }
+
         };
 
         return Resource;

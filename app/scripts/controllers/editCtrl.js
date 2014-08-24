@@ -5,11 +5,11 @@ angular.module("angularDemo").controller("editCtrl", function ($scope, address, 
     $scope.address = address;
 
     $scope.save = function () {
-        $scope.address.$save().$promise.then(goToRoot);
+        $scope.address.$save(goToRoot);
     };
 
     $scope.delete = function () {
-        $scope.address.$delete().then(goToRoot);
+        $scope.address.$delete(goToRoot);
     };
 
     function goToRoot() {
