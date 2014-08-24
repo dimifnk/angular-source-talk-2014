@@ -9,7 +9,7 @@ angular.module("angularDemo").controller("editCtrl", function ($scope, address, 
     };
 
     $scope.delete = function () {
-        $scope.address.$delete().$promise.then(goToRoot);
+        $scope.address.$delete().then(goToRoot);
     };
 
     function goToRoot() {
