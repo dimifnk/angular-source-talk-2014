@@ -3,7 +3,11 @@
     <table>
         <thead>
             <tr>
-                <th ng-repeat="col in columns">{{col}}</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Group</th>
                 <th>
                     <a ng-href="/add"><img src="/images/Plus.png" class="button-icon"></a>
                     <a href ng-click="reload()"><img src="/images/Reload.png" class="button-icon"></a>
@@ -12,7 +16,11 @@
         </thead>
         <tbody>
             <tr ng-repeat="address in addresses | filter:searchFilter track by address.id" ng-class-even="'even'" ng-class-odd="'odd'">
-                <td ng-repeat="col in columns">{{address[col]}}</td>
+                <td>{{address.firstname}}</td>
+                <td>{{address.lastname}}</td>
+                <td>{{address.city}}</td>
+                <td>{{address.country}}</td>
+                <td>{{address.group}}</td>
                 <td>
                     <a ng-href="/edit/{{address.id}}"><img src="/images/Tools.png" class="button-icon"></a>
                 </td>
