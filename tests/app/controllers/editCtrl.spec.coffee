@@ -28,6 +28,7 @@ describe "editCtrl", ->
 
   beforeEach ->
     $httpBackend.when("DELETE", "/data/addresses/1").respond {id: 1}
+    $httpBackend.when("POST", "/data/addresses").respond {id: 1}
     $httpBackend.when("PUT", "/data/addresses/1").respond {id: 1}
 
   afterEach ->
@@ -36,19 +37,28 @@ describe "editCtrl", ->
 
   describe "save()", ->
 
-    it "should trigger a PUT request to /data/addresses/:id", ->
-      $location.path("/edit/:id")
-      $httpBackend.expectPUT "/data/addresses/1"
+    xit "should trigger a POST request to /data/addresses/:id if the resource is transient", ->
+      $location.path "/edit/:id"
+      $httpBackend.expectPOST "/data/addresses"
+      delete address.id
 
       $scope.save()
 
+      $httpBackend.flush()
+      expect($location.path()).toBe "/"
+
+    xit "should trigger a PUT request to /data/addresses/:id if the resource is persistent", ->
+      $location.path "/edit/:id"
+      $httpBackend.expectPUT "/data/addresses/1"
+
+      $scope.save()
 
       $httpBackend.flush()
       expect($location.path()).toBe "/"
 
   describe "delete()", ->
 
-    it "should trigger a get request to /data/addresses/:id", ->
+    xit "should trigger a get request to /data/addresses/:id", ->
       $location.path("/edit/:id")
       $httpBackend.expectDELETE "/data/addresses/1"
 
