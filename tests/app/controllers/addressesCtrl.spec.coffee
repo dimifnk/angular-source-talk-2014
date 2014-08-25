@@ -51,11 +51,3 @@ describe "addressesCtrl", ->
 
     it "should query all Addresses and they should be put on the scope", ->
       expect($scope.addresses).toBe addresses
-
-  describe "$scope.reload()", ->
-    xit "should trigger a get request to /data/addresses", ->
-      $httpBackend.expectGET "/data/addresses"
-
-      $scope.reload()
-
-      $httpBackend.flush()
