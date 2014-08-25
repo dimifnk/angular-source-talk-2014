@@ -22,7 +22,7 @@ describe "resource", ->
 
   describe "query()", ->
 
-    it "should trigger a get request to /data/addresses", ->
+    xit "should trigger a get request to /data/addresses", ->
       $httpBackend.expectGET "/data/addresses"
 
       Addresses.query()
@@ -31,7 +31,7 @@ describe "resource", ->
 
   describe "get(address)", ->
 
-    it "should trigger a get request to /data/addresses/:id", ->
+    xit "should trigger a get request to /data/addresses/:id", ->
       $httpBackend.expectGET "/data/addresses/1"
 
       Addresses.get id: 1
@@ -40,26 +40,26 @@ describe "resource", ->
 
   describe "save(address)", ->
 
-    it "should trigger a POST request to /data/addresses, if no id is given", ->
+    xit "should trigger a POST request to /data/addresses, if no id is given", ->
       $httpBackend.expectPOST "/data/addresses"
 
       Addresses.save forename: "john"
 
       $httpBackend.flush()
 
-    it "should trigger a PUT request to /data/addresses/:id, if an id is given", ->
+    xit "should trigger a PUT request to /data/addresses/:id, if an id is given", ->
       $httpBackend.expectPUT "/data/addresses/1"
 
       Addresses.save forename: "john", id: 1
 
       $httpBackend.flush()
 
-    it "should send only fields listed in the schema of the resource", ->
+    xit "should send only fields listed in the schema of the resource", ->
       # TODO: implement
 
   describe "delete(address)", ->
 
-    it "should trigger a get request to /data/addresses/:id", ->
+    xit "should trigger a get request to /data/addresses/:id", ->
       $httpBackend.expectDELETE "/data/addresses/1"
 
       Addresses.delete id: 1
