@@ -1,7 +1,5 @@
-angular.module("angularDemo").controller("editCtrl", function ($scope, address) {
+angular.module("angularDemo").controller("editCtrl", function ($scope) {
 
     "use strict";
-
-    $scope.address = address;
 
 });
