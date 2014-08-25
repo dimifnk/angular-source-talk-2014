@@ -1,11 +1,7 @@
-angular.module("angularDemo").controller("editCtrl", function ($scope, address, $location) {
+angular.module("angularDemo").controller("editCtrl", function ($scope, address) {
 
     "use strict";
 
     $scope.address = address;
-
-    function goToRoot() {
-        $location.path("/");
-    }
 
 });
