@@ -52,17 +52,6 @@ describe "addressesCtrl", ->
     it "should query all Addresses and they should be put on the scope", ->
       expect($scope.addresses).toBe addresses
 
-  describe "$scope.deleteSelected()", ->
-
-    it "should delete all selected addresses", ->
-      address2.selected = true
-      $httpBackend.expectDELETE "/data/addresses/2"
-      $httpBackend.expectGET "/data/addresses"
-
-      $scope.deleteSelected()
-
-      $httpBackend.flush()
-
 
   describe "$scope.reorder()", ->
     it "should set the order to col and reverseOrder should be the same", ->
@@ -93,45 +82,13 @@ describe "addressesCtrl", ->
 
       $httpBackend.flush()
 
-  describe "$scope.selectAll()", ->
+  describe "$scope.deleteSelected()", ->
 
-    xit "should add selection to all addresses, if $scope.allSelected is false", ->
-      $scope.allSelected = false
+    xit "should delete all selected addresses", ->
+      address2.selected = true
+      $httpBackend.expectDELETE "/data/addresses/2"
+      $httpBackend.expectGET "/data/addresses"
 
-      $scope.selectAll()
+      $scope.deleteSelected()
 
-      expect(addresses.every (addr) -> addr.selected).toBe true
-
-    xit "should deselect all addresses, if $scope.allSelected is true", ->
-      $scope.allSelected = true
-
-      $scope.selectAll()
-
-      expect(addresses.some (addr) -> addr.selected).toBe false
-
-  describe "$scope.updateAllSelected()", ->
-
-    xit "should set $scope.allSelected to false, if no address is selected", ->
-      addresses.forEach (addr) -> addr.selected = false
-
-      $scope.updateAllSelected()
-
-      $timeout.flush 0
-      expect($scope.allSelected).toBe false
-
-    xit "should set $scope.allSelected to false, if not all addresses are selected", ->
-      addresses.forEach (addr) -> addr.selected = false
-      addresses[0].selected = true
-
-      $scope.updateAllSelected()
-
-      $timeout.flush 0
-      expect($scope.allSelected).toBe false
-
-    xit "should set $scope.allSelected to true, if all addresses are selected", ->
-      addresses.forEach (addr) -> addr.selected = true
-
-      $scope.updateAllSelected()
-
-      $timeout.flush 0
-      expect($scope.allSelected).toBe true
+      $httpBackend.flush()

@@ -3,13 +3,11 @@
     <table>
         <thead>
             <tr>
-                <th>
-                    <input type="checkbox">
-                </th>
+                <th></th>
                 <th ng-repeat="col in columns" ng-click="reorder(col)" ng-class="{ordered: order === col, reversed: reverseOrder}">{{col | capitalize}}</th>
                 <th>
                     <a ng-href="/add"><img src="/images/Plus.png" class="button-icon"></a>
-                    <a href ng-click="deleteSelected()"><img src="/images/Trash.png" class="button-icon"></a>
+                    <a href><img src="/images/Trash.png" class="button-icon"></a>
                     <a href ng-click="reload()"><img src="/images/Reload.png" class="button-icon"></a>
                 </th>
             </tr>
@@ -17,7 +15,7 @@
         <tbody>
             <tr ng-repeat="address in addresses | filter:searchFilter | orderBy:order:reverseOrder track by address.id" ng-class-even="'even'" ng-class-odd="'odd'">
                 <td>
-                    <input type="checkbox" ng-model="address.selected" ng-click="updateAllSelected()">
+                    <input type="checkbox">
                 </td>
                 <td ng-repeat="col in columns">{{address[col]}}</td>
                 <td>
