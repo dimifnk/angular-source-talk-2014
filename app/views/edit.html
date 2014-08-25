@@ -3,29 +3,29 @@
         <fieldset>
             <legend>Person</legend>
             <label for="firstname">Firstname:</label>
-            <input id="firstname" type="text" ng-model="address.firstname" class="form" required>
+            <input id="firstname" type="text" ng-model="address.firstname" class="form">
             <label for="lastname">Lastname:</label>
-            <input id="lastname" type="text" ng-model="address.lastname" class="form" required>
+            <input id="lastname" type="text" ng-model="address.lastname" class="form">
             <label for="email">Email:</label>
-            <input id="email" type="email" ng-model="address.email" class="form" required>
+            <input id="email" type="email" ng-model="address.email" class="form">
             <label for="group">Group:</label>
             <input id="group" type="text" ng-model="address.group" class="form">
         </fieldset>
         <fieldset>
             <legend>Geo</legend>
             <label for="street">Street:</label>
-            <input id="street" type="text" ng-model="address.street" class="form" required>
+            <input id="street" type="text" ng-model="address.street" class="form">
             <label for="city">City:</label>
-            <input id="city" type="text" ng-model="address.city" class="form" required>
+            <input id="city" type="text" ng-model="address.city" class="form">
             <label for="zipcode">Zipcode:</label>
-            <input id="zipcode" type="text" ng-model="address.zipcode" class="form" required>
+            <input id="zipcode" type="text" ng-model="address.zipcode" class="form">
             <label for="country">Country:</label>
-            <input id="country" type="text" ng-model="address.country" class="form" required>
+            <input id="country" type="text" ng-model="address.country" class="form">
         </fieldset>
         <fieldset>
             <a ng-href="/"><img src="/images/Cancel.png" class="button-icon form"></a>
             <a href ng-click="delete()"><img src="/images/Trash.png" class="button-icon form"></a>
-            <a href ng-click="save()"><img src="/images/Save.png" ng-hide="addressForm.$invalid" class="button-icon form"></a>
+            <a href ng-click="save()"><img src="/images/Save.png" class="button-icon form"></a>
         </fieldset>
     </form>
 </article>
