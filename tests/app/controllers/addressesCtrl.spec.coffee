@@ -95,14 +95,14 @@ describe "addressesCtrl", ->
 
   describe "$scope.selectAll()", ->
 
-    it "should add selection to all addresses, if $scope.allSelected is false", ->
+    xit "should add selection to all addresses, if $scope.allSelected is false", ->
       $scope.allSelected = false
 
       $scope.selectAll()
 
       expect(addresses.every (addr) -> addr.selected).toBe true
 
-    it "should deselect all addresses, if $scope.allSelected is true", ->
+    xit "should deselect all addresses, if $scope.allSelected is true", ->
       $scope.allSelected = true
 
       $scope.selectAll()
@@ -111,7 +111,7 @@ describe "addressesCtrl", ->
 
   describe "$scope.updateAllSelected()", ->
 
-    it "should set $scope.allSelected to false, if no address is selected", ->
+    xit "should set $scope.allSelected to false, if no address is selected", ->
       addresses.forEach (addr) -> addr.selected = false
 
       $scope.updateAllSelected()
@@ -119,7 +119,7 @@ describe "addressesCtrl", ->
       $timeout.flush 0
       expect($scope.allSelected).toBe false
 
-    it "should set $scope.allSelected to false, if not all addresses are selected", ->
+    xit "should set $scope.allSelected to false, if not all addresses are selected", ->
       addresses.forEach (addr) -> addr.selected = false
       addresses[0].selected = true
 
@@ -128,7 +128,7 @@ describe "addressesCtrl", ->
       $timeout.flush 0
       expect($scope.allSelected).toBe false
 
-    it "should set $scope.allSelected to true, if all addresses are selected", ->
+    xit "should set $scope.allSelected to true, if all addresses are selected", ->
       addresses.forEach (addr) -> addr.selected = true
 
       $scope.updateAllSelected()

@@ -27,18 +27,4 @@ angular.module("angularDemo").controller("addressesCtrl", function ($scope, addr
         $scope.order = order;
         $scope.reverseOrder = !$scope.reverseOrder;
     };
-
-    $scope.selectAll = function() {
-        addresses.forEach(function(address) {
-            address. selected = !$scope.allSelected;
-        });
-    };
-
-    $scope.updateAllSelected = function() {
-        $timeout(function() { // We have to wait for the model update.
-            $scope.allSelected = addresses.every(function(address) {
-                return address.selected;
-            });
-        });
-    };
 });

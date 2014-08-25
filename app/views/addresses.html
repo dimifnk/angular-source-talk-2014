@@ -4,7 +4,7 @@
         <thead>
             <tr>
                 <th>
-                    <input type="checkbox" ng-model="allSelected" ng-click="selectAll()">
+                    <input type="checkbox">
                 </th>
                 <th ng-repeat="col in columns" ng-click="reorder(col)" ng-class="{ordered: order === col, reversed: reverseOrder}">{{col | capitalize}}</th>
                 <th>
