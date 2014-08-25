@@ -53,7 +53,7 @@ describe "addressesCtrl", ->
       expect($scope.addresses).toBe addresses
 
   describe "$scope.reload()", ->
-    it "should trigger a get request to /data/addresses", ->
+    xit "should trigger a get request to /data/addresses", ->
       $httpBackend.expectGET "/data/addresses"
 
       $scope.reload()
