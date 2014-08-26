@@ -6,7 +6,12 @@ angular.module("angularDemo").config(function ($routeProvider, $locationProvider
     $routeProvider
         .when("/", {
             templateUrl: "/assets/views/addresses.html",
-            controller: "addressesCtrl"
+            controller: "addressesCtrl",
+            resolve: {
+                addresses: function(Addresses) {
+                    return Addresses.query();
+                }
+            }
         })
         .when("/add", {
             templateUrl: "/assets/views/edit.html",
