@@ -7,5 +7,5 @@ describe "capitalize", ->
   beforeEach inject ($filter) ->
     capitalize = $filter "capitalize"
 
-  xit "should convert first character to upper-case", ->
+  it "should convert first character to upper-case", ->
     expect(capitalize "test").toBe "Test"

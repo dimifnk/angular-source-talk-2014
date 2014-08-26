@@ -59,3 +59,24 @@ describe "addressesCtrl", ->
       $scope.reload()
 
       $httpBackend.flush()
+
+  describe "$scope.reorder()", ->
+    xit "should set the order to col and reverseOrder should be the same", ->
+      $scope.reverseOrder = false
+      $scope.order = "lastname"
+      col = "firstname"
+
+      $scope.reorder col
+
+      expect($scope.order).toBe col
+      expect($scope.reverseOrder).toBe false
+
+    xit "should set the order to col and reverseOrder to the opposite of it", ->
+      $scope.reverseOrder = false
+      $scope.order = "lastname"
+      col = "lastname"
+
+      $scope.reorder col
+
+      expect($scope.order).toBe col
+      expect($scope.reverseOrder).toBe true
