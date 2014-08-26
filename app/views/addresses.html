@@ -9,7 +9,7 @@
                 <th>Country</th>
                 <th>Group</th>
                 <th>
-                    <a><img src="/images/Plus.png" class="button-icon"></a>
+                    <a ng-href="/add"><img src="/images/Plus.png" class="button-icon"></a>
                     <a href ng-click="reload()"><img src="/images/Reload.png" class="button-icon"></a>
                 </th>
             </tr>
@@ -22,7 +22,7 @@
                 <td>{{address.country}}</td>
                 <td>{{address.group}}</td>
                 <td>
-                    <a><img src="/images/Tools.png" class="button-icon"></a>
+                    <a ng-href="/edit/{{address.id}}"><img src="/images/Tools.png" class="button-icon"></a>
                 </td>
             </tr>
         </tbody>
