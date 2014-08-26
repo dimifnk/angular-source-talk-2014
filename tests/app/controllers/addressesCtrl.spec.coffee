@@ -52,6 +52,7 @@ describe "addressesCtrl", ->
     it "should query all Addresses and they should be put on the scope", ->
       expect($scope.addresses).toBe addresses
 
+
   describe "$scope.reload()", ->
     it "should trigger a get request to /data/addresses", ->
       $httpBackend.expectGET "/data/addresses"
@@ -61,7 +62,7 @@ describe "addressesCtrl", ->
       $httpBackend.flush()
 
   describe "$scope.reorder()", ->
-    xit "should set the order to col and reverseOrder should be the same", ->
+    it "should set the order to col and reverseOrder should be the same", ->
       $scope.reverseOrder = false
       $scope.order = "lastname"
       col = "firstname"
@@ -71,7 +72,7 @@ describe "addressesCtrl", ->
       expect($scope.order).toBe col
       expect($scope.reverseOrder).toBe false
 
-    xit "should set the order to col and reverseOrder to the opposite of it", ->
+    it "should set the order to col and reverseOrder to the oposite of it", ->
       $scope.reverseOrder = false
       $scope.order = "lastname"
       col = "lastname"
@@ -80,3 +81,14 @@ describe "addressesCtrl", ->
 
       expect($scope.order).toBe col
       expect($scope.reverseOrder).toBe true
+
+  describe "$scope.deleteSelected()", ->
+
+    xit "should delete all selected addresses", ->
+      address2.selected = true
+      $httpBackend.expectDELETE "/data/addresses/2"
+      $httpBackend.expectGET "/data/addresses"
+
+      $scope.deleteSelected()
+
+      $httpBackend.flush()

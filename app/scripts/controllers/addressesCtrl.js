@@ -12,4 +12,12 @@ angular.module("angularDemo").controller("addressesCtrl", function ($scope, addr
             addresses = $scope.addresses = addrs;
         });
     };
+
+    $scope.reorder = function(order) {
+        if($scope.order !== order) {
+            $scope.reverseOrder = true;
+        }
+        $scope.order = order;
+        $scope.reverseOrder = !$scope.reverseOrder;
+    };
 });
