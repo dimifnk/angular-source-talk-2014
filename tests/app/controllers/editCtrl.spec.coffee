@@ -37,7 +37,7 @@ describe "editCtrl", ->
 
   describe "save()", ->
 
-    xit "should trigger a POST request to /data/addresses/:id if the resource is transient", ->
+    it "should trigger a POST request to /data/addresses/:id if the resource is transient", ->
       $location.path "/edit/:id"
       $httpBackend.expectPOST "/data/addresses"
       delete address.id
@@ -47,7 +47,7 @@ describe "editCtrl", ->
       $httpBackend.flush()
       expect($location.path()).toBe "/"
 
-    xit "should trigger a PUT request to /data/addresses/:id if the resource is persistent", ->
+    it "should trigger a PUT request to /data/addresses/:id if the resource is persistent", ->
       $location.path "/edit/:id"
       $httpBackend.expectPUT "/data/addresses/1"
 
@@ -58,7 +58,7 @@ describe "editCtrl", ->
 
   describe "delete()", ->
 
-    xit "should trigger a get request to /data/addresses/:id", ->
+    it "should trigger a get request to /data/addresses/:id", ->
       $location.path("/edit/:id")
       $httpBackend.expectDELETE "/data/addresses/1"
 
