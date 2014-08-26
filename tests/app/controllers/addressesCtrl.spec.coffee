@@ -84,7 +84,7 @@ describe "addressesCtrl", ->
 
   describe "$scope.deleteSelected()", ->
 
-    xit "should delete all selected addresses", ->
+    it "should delete all selected addresses", ->
       address2.selected = true
       $httpBackend.expectDELETE "/data/addresses/2"
       $httpBackend.expectGET "/data/addresses"
@@ -92,3 +92,46 @@ describe "addressesCtrl", ->
       $scope.deleteSelected()
 
       $httpBackend.flush()
+      
+  describe "$scope.selectAll()", ->
+
+    xit "should add selection to all addresses, if $scope.allSelected is false", ->
+      $scope.allSelected = false
+
+      $scope.selectAll()
+
+      expect(addresses.every (addr) -> addr.selected).toBe true
+
+    xit "should deselect all addresses, if $scope.allSelected is true", ->
+      $scope.allSelected = true
+
+      $scope.selectAll()
+
+      expect(addresses.some (addr) -> addr.selected).toBe false
+
+  describe "$scope.updateAllSelected()", ->
+
+    xit "should set $scope.allSelected to false, if no address is selected", ->
+      addresses.forEach (addr) -> addr.selected = false
+
+      $scope.updateAllSelected()
+
+      $timeout.flush 0
+      expect($scope.allSelected).toBe false
+
+    xit "should set $scope.allSelected to false, if not all addresses are selected", ->
+      addresses.forEach (addr) -> addr.selected = false
+      addresses[0].selected = true
+
+      $scope.updateAllSelected()
+
+      $timeout.flush 0
+      expect($scope.allSelected).toBe false
+
+    xit "should set $scope.allSelected to true, if all addresses are selected", ->
+      addresses.forEach (addr) -> addr.selected = true
+
+      $scope.updateAllSelected()
+
+      $timeout.flush 0
+      expect($scope.allSelected).toBe true 
