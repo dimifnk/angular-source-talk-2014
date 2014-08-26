@@ -15,11 +15,21 @@ angular.module("angularDemo").config(function ($routeProvider, $locationProvider
         })
         .when("/add", {
             templateUrl: "/assets/views/edit.html",
-            controller: "editCtrl"
+            controller: "editCtrl",
+            resolve: {
+                address: function (Addresses) {
+                    return new Addresses();
+                }
+            }
         })
         .when("/edit/:id", {
             templateUrl: "/assets/views/edit.html",
-            controller: "editCtrl"
+            controller: "editCtrl",
+            resolve: {
+                address: function ($route, Addresses) {
+                    return Addresses.get({id: $route.current.params.id});
+                }
+            }
         })
         .otherwise({
             redirectTo: "/"

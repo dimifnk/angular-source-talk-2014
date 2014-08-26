@@ -1,5 +1,5 @@
 <article class="addresses">
-    <input type="text" placeholder="Search">
+    <input type="text" placeholder="Search" ng-model="searchFilter">
     <table>
         <thead>
             <tr>
@@ -9,18 +9,21 @@
                 <th>Country</th>
                 <th>Group</th>
                 <th>
+                    <a><img src="/images/Plus.png" class="button-icon"></a>
                     <a href ng-click="reload()"><img src="/images/Reload.png" class="button-icon"></a>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="address in addresses track by address.id" ng-class-even="'even'" ng-class-odd="'odd'">
+            <tr ng-repeat="address in addresses | filter:searchFilter track by address.id" ng-class-even="'even'" ng-class-odd="'odd'">
                 <td>{{address.firstname}}</td>
                 <td>{{address.lastname}}</td>
                 <td>{{address.city}}</td>
                 <td>{{address.country}}</td>
                 <td>{{address.group}}</td>
-                <td></td>
+                <td>
+                    <a><img src="/images/Tools.png" class="button-icon"></a>
+                </td>
             </tr>
         </tbody>
     </table>
