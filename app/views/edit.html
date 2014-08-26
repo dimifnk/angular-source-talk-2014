@@ -1,31 +1,31 @@
 <article class="add">
-    <form name="addressForm">
+    <form name="addressForm" novalidate>
         <fieldset>
             <legend>Person</legend>
             <label for="firstname">Firstname:</label>
-            <input id="firstname" type="text" ng-model="address.firstname" class="form">
+            <input id="firstname" type="text" ng-model="address.firstname" class="form" required>
             <label for="lastname">Lastname:</label>
-            <input id="lastname" type="text" ng-model="address.lastname" class="form">
+            <input id="lastname" type="text" ng-model="address.lastname" class="form" required>
             <label for="email">Email:</label>
-            <input id="email" type="email" ng-model="address.email" class="form">
+            <input id="email" type="email" ng-model="address.email" class="form" required>
             <label for="group">Group:</label>
             <input id="group" type="text" ng-model="address.group" class="form">
         </fieldset>
         <fieldset>
             <legend>Geo</legend>
             <label for="street">Street:</label>
-            <input id="street" type="text" ng-model="address.street" class="form">
+            <input id="street" type="text" ng-model="address.street" class="form" required>
             <label for="city">City:</label>
-            <input id="city" type="text" ng-model="address.city" class="form">
+            <input id="city" type="text" ng-model="address.city" class="form" required>
             <label for="zipcode">Zipcode:</label>
-            <input id="zipcode" type="text" ng-model="address.zipcode" class="form">
+            <input id="zipcode" type="text" ng-model="address.zipcode" class="form" required>
             <label for="country">Country:</label>
-            <input id="country" type="text" ng-model="address.country" class="form">
+            <input id="country" type="text" ng-model="address.country" class="form" required>
         </fieldset>
         <fieldset>
             <a ng-href="/"><img src="/images/Cancel.png" class="button-icon form"></a>
             <a href ng-click="delete()"><img src="/images/Trash.png" class="button-icon form"></a>
-            <a href ng-click="save()"><img src="/images/Save.png" class="button-icon form"></a>
+            <a href ng-click="save()" ng-hide="addressForm.$invalid"><img src="/images/Save.png" class="button-icon form"></a>
         </fieldset>
     </form>
 </article>
